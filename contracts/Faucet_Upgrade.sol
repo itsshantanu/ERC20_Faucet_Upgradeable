@@ -6,22 +6,13 @@ import "@openzeppelin/contracts-upgradeable/access/OwnableUpgradeable.sol";
 import "@openzeppelin/contracts/utils/Counters.sol";
 import "@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol";
 
-contract Faucet_V1 is Initializable, ERC20Upgradeable, OwnableUpgradeable {
+contract Faucet_V2 is Initializable, ERC20Upgradeable, OwnableUpgradeable {
 
     using Counters for Counters.Counter;
     Counters.Counter private _withdrawlCount;
 
     uint public amountAllowed;
     uint public timesAllowed;
-
-    function initialize(uint _amountAllowed, uint _timesAllowed) external initializer {
-
-         amountAllowed = _amountAllowed;
-         timesAllowed = _timesAllowed;
-         __ERC20_init("VeriSmartToken", "VST");
-         __Ownable_init();
-         _mint(msg.sender, 50000000 * (10 ** 18));
-     }
 
 
     mapping(address => uint) public count;
@@ -37,6 +28,11 @@ contract Faucet_V1 is Initializable, ERC20Upgradeable, OwnableUpgradeable {
         _withdrawlCount.increment();
 
         count[msg.sender] = _withdrawlCount.current();
+    }
+
+    function increaseTimesAllowed () external {
+
+        timesAllowed += 1; 
     }
 
 }

@@ -1,30 +1,20 @@
 {
   "manifestVersion": "3.2",
   "admin": {
-    "address": "0x26fb3CfEa45B212C7A45690DcD5a7A764a37cF77",
-    "txHash": "0x600e85a063be2821716c0109c213f13f1b7fcae555c3d4ef1e135b6fd6c3f814"
+    "address": "0xF262b95Ddc2DA5738c842B7CD39C51889717696F",
+    "txHash": "0x407559144b63b72b50c4b4c53b720db44ca903cc881c6796ed2dac52e9cbd940"
   },
   "proxies": [
     {
-      "address": "0x653151a1E03FdC1A5A3C728b136652B1dFd8CE83",
-      "txHash": "0x548db9720fdd5728904e1283fb38713d5e33b1ae9856f8001bd5f0ddd56125b7",
-      "kind": "transparent"
-    },
-    {
-      "address": "0xbE5BcdDc3B5782BA98352Ff44C5157f6dEB742B2",
-      "txHash": "0x87eb3036a543acfd66f763e2e14102a29f114fc4a77729d387ac0363451450f6",
-      "kind": "transparent"
-    },
-    {
-      "address": "0x0ED3cc4300fcFC2d205BEd4eb98221F128b91Db3",
-      "txHash": "0xe47b1d4fd32e537fad55bd3aa9ec6b43d4914fe4249c73999b29ca4c83a0c6fe",
+      "address": "0xf9f98D77356ae2c5387AE417cC3512Fb26a10724",
+      "txHash": "0x09dbf3c11aaf449f6e80bee3397f09b5311dbda76b655036c4904e7cbcbd5be8",
       "kind": "transparent"
     }
   ],
   "impls": {
-    "5ed5707601720b77dba0f2ce5ec8d4e9a5ca194eea8ae153e741d6ab2da6e22b": {
-      "address": "0xf6f6E270BD1138eF4881c19eA004652d9ca09473",
-      "txHash": "0x86535d816b8a500d73e8baff7fae1988a0b08f151f199cd64726e9cead8dad2c",
+    "cfd5a26db209086f842405c58c60517b162bc8b6f81ff5ae20b0f41596c8daf8": {
+      "address": "0xE6725EEaD86ed6139d99940Fb15C84813608781B",
+      "txHash": "0x20e3ab5a703587f66a841e85c62d91ebf12f636c6b81caca8977eccb02499a8a",
       "layout": {
         "storage": [
           {
@@ -121,7 +111,7 @@
             "offset": 0,
             "slot": "151",
             "type": "t_struct(Counter)1287_storage",
-            "contract": "UpgradeableFaucet",
+            "contract": "Faucet_V1",
             "src": "contracts/Faucet.sol:12"
           },
           {
@@ -129,7 +119,7 @@
             "offset": 0,
             "slot": "152",
             "type": "t_uint256",
-            "contract": "UpgradeableFaucet",
+            "contract": "Faucet_V1",
             "src": "contracts/Faucet.sol:14"
           },
           {
@@ -137,7 +127,7 @@
             "offset": 0,
             "slot": "153",
             "type": "t_uint256",
-            "contract": "UpgradeableFaucet",
+            "contract": "Faucet_V1",
             "src": "contracts/Faucet.sol:15"
           },
           {
@@ -145,7 +135,7 @@
             "offset": 0,
             "slot": "154",
             "type": "t_mapping(t_address,t_uint256)",
-            "contract": "UpgradeableFaucet",
+            "contract": "Faucet_V1",
             "src": "contracts/Faucet.sol:27"
           }
         ],
@@ -205,9 +195,9 @@
         }
       }
     },
-    "cfd5a26db209086f842405c58c60517b162bc8b6f81ff5ae20b0f41596c8daf8": {
-      "address": "0x8A105E2225429935e0B533E09fF7eFb2924aB725",
-      "txHash": "0xcbb51dbd2a75f23c7621c0a83da344ba50ee71f033e87fac0bc66a240525c933",
+    "214d15c0d7efbd68551996356fb8c0f9815f7e0565b1819be77f636680376f3c": {
+      "address": "0x8B85F1720a7E143E056EAD2D1d2aCE8D68590E57",
+      "txHash": "0x49cd98cbaa672efe664e3d521c83d2ed56e8bf365749638b7f147e310b84bc74",
       "layout": {
         "storage": [
           {
@@ -304,32 +294,32 @@
             "offset": 0,
             "slot": "151",
             "type": "t_struct(Counter)1287_storage",
-            "contract": "VeriSmartFaucet",
-            "src": "contracts/Faucet.sol:12"
+            "contract": "Faucet_V2",
+            "src": "contracts/Faucet_Upgrade.sol:12"
           },
           {
             "label": "amountAllowed",
             "offset": 0,
             "slot": "152",
             "type": "t_uint256",
-            "contract": "VeriSmartFaucet",
-            "src": "contracts/Faucet.sol:14"
+            "contract": "Faucet_V2",
+            "src": "contracts/Faucet_Upgrade.sol:14"
           },
           {
             "label": "timesAllowed",
             "offset": 0,
             "slot": "153",
             "type": "t_uint256",
-            "contract": "VeriSmartFaucet",
-            "src": "contracts/Faucet.sol:15"
+            "contract": "Faucet_V2",
+            "src": "contracts/Faucet_Upgrade.sol:15"
           },
           {
             "label": "count",
             "offset": 0,
             "slot": "154",
             "type": "t_mapping(t_address,t_uint256)",
-            "contract": "VeriSmartFaucet",
-            "src": "contracts/Faucet.sol:27"
+            "contract": "Faucet_V2",
+            "src": "contracts/Faucet_Upgrade.sol:18"
           }
         ],
         "types": {
