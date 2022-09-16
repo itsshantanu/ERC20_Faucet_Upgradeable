@@ -28,7 +28,7 @@ contract Faucet_V1 is Initializable, ERC20Upgradeable, OwnableUpgradeable {
 
     function requestToken (address _requestor, uint amount) external {
 
-        require(count[msg.sender] < timesAllowed, "You have excedeed maximum withdrawl");
+        require(count[msg.sender] < timesAllowed, "You have exceeded maximum withdrawal");
 
         require(amount < amountAllowed, "Amount not allowed");
 
