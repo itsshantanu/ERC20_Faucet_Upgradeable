@@ -7,7 +7,13 @@ In this we have two contracts:-
 - Faucet_V1
 - Faucet_V2
 
-## How to deploy contract:-
+## How contract works:-
+
+In this user uses the requestToken function to request the token to their address. They pass their address and amount of token needed as argument if all the condition like number of times allowed and amount allowed are satisfied then it mints the amount to the users account otherwise it reverts with an error.
+
+## How to deploy/upgrade contract:-
+
+### For deploying contract:- 
 
 1. We first create a Faucet_V1 contract and define the initialize function in it. Which initializes the ERC20, Ownable, mint and variables in proxy contract and also generates proxy admin.
 
@@ -48,13 +54,80 @@ Now we can call the functions in Faucet_V2 and see the update's in Transparent U
 This is how we upgrade the contracts.
 
 
+## Environment Variables
 
-Try running some of the following tasks:
+To run this project, you will need to add the following environment variables to your .env file
 
-```shell
-npx hardhat help
-npx hardhat test
-GAS_REPORT=true npx hardhat test
-npx hardhat node
-npx hardhat run scripts/deploy.js
 ```
+    MATIC_API_URL = "https://polygon-mumbai.g.alchemy.com/v2/YOUR_API_KEY"
+    SCAN_API_KEY = "YOUR-POLYGON-SCAN-API_KEY"
+    PRIVATE_KEY = "YOUR-METAMASK-PRIVATE_KEY"
+```
+
+## NPM Packages:
+
+ - [Openzeppelin](https://docs.openzeppelin.com/)
+ - [OpenZeppelin Hardhat Upgrades API](https://docs.openzeppelin.com/upgrades-plugins/1.x/api-hardhat-upgrades)
+ - [Hardhat Upgrades](https://www.npmjs.com/package/@openzeppelin/hardhat-upgrades)
+ - [Hardhat Ethers](https://www.npmjs.com/package/hardhat-ethers)
+ - [Chai](https://www.npmjs.com/package/chai)
+ - [Ethers](https://www.npmjs.com/package/ethers)
+ - [ethereum-waffle](https://www.npmjs.com/package/ethereum-waffle)
+ - [dotenv](https://www.npmjs.com/package/dotenv)
+
+## Tech Stack:
+ - [Node](https://nodejs.org/en/)
+ - [Hardhat](https://hardhat.org/tutorial/)
+ - [Solidity](https://docs.soliditylang.org/en/v0.8.13)
+
+
+## Run Locally:
+
+Clone the github repo:
+```
+https://github.com/itsshantanu/ERC20_Faucet_Upgradeable.git
+```
+
+Install Node Modules
+```
+npm install
+```
+
+Compile
+```
+npx hardhat compile
+```
+
+Test
+```
+npx hardhat test
+```
+
+Deploy on Localhost
+```
+npx hardhat node
+npx hardhat run scripts/deploy_faucetV1.js --network localhost
+```
+
+Upgrade on Localhost
+```
+npx hardhat node
+npx hardhat run scripts/upgrade_faucet.js --network localhost
+```
+
+Deploy on Mumbai Testnet
+```
+npx hardhat run scripts/deploy_faucetV1.js --network mumbai
+```
+
+Help
+```
+npx hardhat help
+```
+
+## Check at Polygon Mumbai Test Net:
+ - [Faucet_V1](https://mumbai.polygonscan.com/address/0xe6725eead86ed6139d99940fb15c84813608781b)
+ - [Proxy Admin](https://mumbai.polygonscan.com/address/0xf262b95ddc2da5738c842b7cd39c51889717696f)
+ - [Faucet_V2](https://mumbai.polygonscan.com/address/0x8b85f1720a7e143e056ead2d1d2ace8d68590e57)
+ - [Upgrade on Proxy admin](https://mumbai.polygonscan.com/address/0xf262b95ddc2da5738c842b7cd39c51889717696f)
+ - [Transparent Upgradeable Proxy](https://mumbai.polygonscan.com/address/0xf9f98d77356ae2c5387ae417cc3512fb26a10724#code)
